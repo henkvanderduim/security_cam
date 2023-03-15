@@ -1,8 +1,6 @@
 # import libraries
 import cv2
 
-# import winsound
-
 # cam variabele
 cam = cv2.VideoCapture(0)
 
@@ -22,7 +20,6 @@ while cam.isOpened():
             continue
         x, y, w, h = cv2.boundingRect(c)
         cv2.rectangle(frame1, (x, y), (x + w, y + h), (0, 255, 0), 2)
-        # winsound.Playsound("alert.wav", winsound.SND_ASYNC)
     if cv2.waitKey(10) == ord("q"):
         break
     cv2.imshow("Granny Cam", frame1)
